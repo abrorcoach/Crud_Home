@@ -57,5 +57,20 @@ public class HomeService
         homes[index] = home;
         return true;
     }
+
+    public List<Home> GetAllHomes()
+    {
+        return homes;
+    }
+
+    public List<Home> GetHomesByPrice(double minPrice,  double maxPrice)
+    {
+        var homeByPrice = new List<Home>();
+
+        foreach (var homeDb in homes)
+        {
+            if(homeDb.Price >= maxPrice && )
+        }
+    }
     
 }
