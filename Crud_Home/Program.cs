@@ -1,4 +1,5 @@
-﻿using Crud_Home.Services;
+﻿using Crud_Home.Models;
+using Crud_Home.Services;
 
 namespace Crud_Home
 {
@@ -23,6 +24,27 @@ namespace Crud_Home
                 Console.WriteLine("6. Get Homes By Price");
                 Console.WriteLine("7. Get Home By Floor");
                 Console.WriteLine("8. Buy Homy By Id");
+
+                var option = Console.ReadLine();
+
+                if (option == "1")
+                {
+                    var home = new Home();
+
+                    Console.Write("Enter Location");
+                    home.Location = Console.ReadLine();
+                    Console.Write("Enter rooms");
+                    string rooms = Console.ReadLine();
+                    home.Rooms.Add(rooms);
+                    Console.Write("Enter Price");
+                    home.Price = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter Floor");
+                    home.Floor = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter Quantity");
+                    home.Quantity = int.Parse(Console.ReadLine());
+
+                    homeService.AddHome(home);
+                }
             }
         }
     }
