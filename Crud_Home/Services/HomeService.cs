@@ -89,6 +89,8 @@ public class HomeService
                 homeByFloor.Add(homeDb);
             }
         }
+
+        return homeByFloor;
     }
     
 }
