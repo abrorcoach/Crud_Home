@@ -68,10 +68,26 @@ internal class Program
             else if (option == "4")
             {
 
-            } 
+            }
             else if (option == "5")
             {
                 var homes = homeService.GetAllHomes();
+
+                foreach (var home in homes)
+                {
+                    string info = $"Id {home.Id}, Location {home.Location}, Rooms {home.Rooms} " +
+                    $"Price {home.Price}, Floor {home.Floor}, Quantity {home.Quantity}";
+                    Console.WriteLine(info);
+                }
+            }
+            else if (option == "6")
+            {
+                Console.Write("Enter min price: ");
+                double minPrice = double.Parse(Console.ReadLine());
+                Console.Write("Enter max price: ");
+                double maxPrice = double.Parse(Console.ReadLine());
+
+                var homes = homeService.GetHomesByPrice(minPrice,maxPrice);
 
                 foreach (var home in homes)
                 {
