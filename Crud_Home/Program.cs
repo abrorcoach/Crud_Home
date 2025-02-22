@@ -7,7 +7,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-
+        FrontEnd();
     }
 
     public static void FrontEnd()
