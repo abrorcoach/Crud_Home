@@ -110,4 +110,17 @@ public class HomeService
         return true;
     }
 
+    public void DataSeed()
+    {
+        var Home1 = new Home()
+        {
+            Id = Guid.NewGuid(),
+            Location = "Yunusobod",
+            Rooms = 3,
+            Price = 120000,
+            Floor = 8,
+            Quantity = 2
+        };
+    }
+
 }

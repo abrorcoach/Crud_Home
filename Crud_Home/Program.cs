@@ -34,8 +34,7 @@ internal class Program
                 Console.Write("Enter Location: ");
                 home.Location = Console.ReadLine();
                 Console.Write("Enter rooms: ");
-                string rooms = Console.ReadLine();
-                home.Rooms.Add(rooms);
+                home.Rooms = int.Parse(Console.ReadLine());
                 Console.Write("Enter Price: ");
                 home.Price = double.Parse(Console.ReadLine());
                 Console.Write("Enter Floor: ");
@@ -73,8 +72,7 @@ internal class Program
                 Console.Write("Enter Location: ");
                 home.Location = Console.ReadLine();
                 Console.Write("Enter rooms: ");
-                string rooms = Console.ReadLine();
-                home.Rooms.Add(rooms);
+                home.Rooms = int.Parse(Console.ReadLine());
                 Console.Write("Enter Price: ");
                 home.Price = double.Parse(Console.ReadLine());
                 Console.Write("Enter Floor: ");
