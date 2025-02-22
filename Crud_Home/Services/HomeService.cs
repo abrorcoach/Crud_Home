@@ -121,6 +121,15 @@ public class HomeService
             Floor = 8,
             Quantity = 2
         };
+        var Home2 = new Home()
+        {
+            Id = Guid.NewGuid(),
+            Location = "Yunusobod",
+            Rooms = 2,
+            Price = 80000,
+            Floor = 3,
+            Quantity = 1
+        };
     }
 
 }
