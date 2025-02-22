@@ -22,8 +22,8 @@ internal class Program
             Console.WriteLine("4. Update Home");
             Console.WriteLine("5. Get All Homes");
             Console.WriteLine("6. Get Homes By Price");
-            Console.WriteLine("7. Get Home By Floor");
-            Console.WriteLine("8. Buy Homy By Id");
+            Console.WriteLine("7. Get Homes By Floor");
+            Console.WriteLine("8. Buy Home By Id");
 
             var option = Console.ReadLine();
 
@@ -87,7 +87,7 @@ internal class Program
                 Console.Write("Enter max price: ");
                 double maxPrice = double.Parse(Console.ReadLine());
 
-                var homes = homeService.GetHomesByPrice(minPrice,maxPrice);
+                var homes = homeService.GetHomesByPrice(minPrice, maxPrice);
 
                 foreach (var home in homes)
                 {
@@ -95,6 +95,21 @@ internal class Program
                     $"Price {home.Price}, Floor {home.Floor}, Quantity {home.Quantity}";
                     Console.WriteLine(info);
                 }
+            }
+            else if (option == "7")
+            {
+                Console.Write("Enter Floor: ");
+                int floor = int.Parse(Console.ReadLine());
+
+                var homes = homeService.GetHomesByFloor(floor);
+
+                foreach (var home in homes)
+                {
+                    string info = $"Id {home.Id}, Location {home.Location}, Rooms {home.Rooms} " +
+                    $"Price {home.Price}, Floor {home.Floor}, Quantity {home.Quantity}";
+                    Console.WriteLine(info);
+                }
+
             }
         }
     }
