@@ -69,8 +69,13 @@ public class HomeService
 
         foreach (var homeDb in homes)
         {
-            if(homeDb.Price >= maxPrice && )
+            if(homeDb.Price >= minPrice &&  homeDb.Price <= maxPrice)
+            {
+                homeByPrice.Add(homeDb);
+            }
         }
+
+         return homeByPrice;
     }
     
 }
