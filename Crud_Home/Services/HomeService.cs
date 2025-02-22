@@ -18,4 +18,17 @@ public class HomeService
 
         return home;
     }
+
+    public Home GetById(Guid id)
+    {
+        foreach (var home in homes)
+        {
+            if (home.Id == id)
+            {
+                return home;
+            }
+        }
+
+        return null;
+    }
 }
