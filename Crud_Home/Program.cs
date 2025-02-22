@@ -31,16 +31,16 @@ internal class Program
             {
                 var home = new Home();
 
-                Console.Write("Enter Location");
+                Console.Write("Enter Location: ");
                 home.Location = Console.ReadLine();
-                Console.Write("Enter rooms");
+                Console.Write("Enter rooms: ");
                 string rooms = Console.ReadLine();
                 home.Rooms.Add(rooms);
-                Console.Write("Enter Price");
+                Console.Write("Enter Price: ");
                 home.Price = double.Parse(Console.ReadLine());
-                Console.WriteLine("Enter Floor");
+                Console.Write("Enter Floor: ");
                 home.Floor = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter Quantity");
+                Console.Write("Enter Quantity: ");
                 home.Quantity = int.Parse(Console.ReadLine());
 
                 homeService.AddHome(home);
@@ -67,6 +67,22 @@ internal class Program
             }
             else if (option == "4")
             {
+                var home = new Home();
+                Console.Write("Enter Id: ");
+                home.Id = Guid.Parse(Console.ReadLine()); 
+                Console.Write("Enter Location: ");
+                home.Location = Console.ReadLine();
+                Console.Write("Enter rooms: ");
+                string rooms = Console.ReadLine();
+                home.Rooms.Add(rooms);
+                Console.Write("Enter Price: ");
+                home.Price = double.Parse(Console.ReadLine());
+                Console.Write("Enter Floor: ");
+                home.Floor = int.Parse(Console.ReadLine());
+                Console.Write("Enter Quantity: ");
+                home.Quantity = int.Parse(Console.ReadLine());
+
+                homeService.UpdateHome(home);
 
             }
             else if (option == "5")
