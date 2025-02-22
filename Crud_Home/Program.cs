@@ -7,7 +7,7 @@ namespace Crud_Home
     {
         static void Main(string[] args)
         {
-            
+
         }
 
         public static void FrontEnd()
@@ -44,6 +44,18 @@ namespace Crud_Home
                     home.Quantity = int.Parse(Console.ReadLine());
 
                     homeService.AddHome(home);
+                }
+                else if (option == "2")
+                {
+                    Console.WriteLine("Enter Id");
+                    var id = Guid.Parse(Console.ReadLine());
+
+                    var home = homeService.GetById(id);
+
+                    string info = $"Id {home.Id}, Location {home.Location}, Rooms {home.Rooms} " +
+                        $"Price {home.Price}, Floor {home.Floor}, Quantity {home.Quantity}";
+                    Console.WriteLine(info);
+
                 }
             }
         }
