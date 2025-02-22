@@ -111,6 +111,24 @@ internal class Program
                 }
 
             }
+            else if (option == "8")
+            {
+                var homes = homeService.GetAllHomes();
+
+                foreach (var home in homes)
+                {
+                    string info = $"Id {home.Id}, Location {home.Location}, Rooms {home.Rooms} " +
+                    $"Price {home.Price}";
+                    Console.WriteLine(info);
+                }
+
+                Console.Write("Enter id to buy home:");
+                var id = Guid.Parse(Console.ReadLine());
+                homeService.BuyHomeById(id);
+            }
+
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 
