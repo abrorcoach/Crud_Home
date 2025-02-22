@@ -44,5 +44,18 @@ public class HomeService
 
         return true;
     }
+
+    public bool UpdateHome(Home home)
+    {
+        var homeDb = GetById(home.Id);
+        if (homeDb is null)
+        {
+            return false;
+        }
+
+        var index = homes.IndexOf(homeDb);
+        homes[index] = home;
+        return true;
+    }
     
 }
