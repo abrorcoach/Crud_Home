@@ -81,6 +81,14 @@ public class HomeService
     public List<Home> GetHomesByFloor(int floor)
     {
         var homeByFloor = new List<Home>();
+
+        foreach(var homeDb in homes)
+        {
+            if (homeDb.Floor == floor)
+            {
+                homeByFloor.Add(homeDb);
+            }
+        }
     }
     
 }
