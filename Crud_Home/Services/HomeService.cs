@@ -63,26 +63,26 @@ public class HomeService
         return homes;
     }
 
-    public List<Home> GetHomesByPrice(double minPrice,  double maxPrice)
+    public List<Home> GetHomesByPrice(double minPrice, double maxPrice)
     {
         var homeByPrice = new List<Home>();
 
         foreach (var homeDb in homes)
         {
-            if(homeDb.Price >= minPrice &&  homeDb.Price <= maxPrice)
+            if (homeDb.Price >= minPrice && homeDb.Price <= maxPrice)
             {
                 homeByPrice.Add(homeDb);
             }
         }
 
-         return homeByPrice;
+        return homeByPrice;
     }
 
     public List<Home> GetHomesByFloor(int floor)
     {
         var homeByFloor = new List<Home>();
 
-        foreach(var homeDb in homes)
+        foreach (var homeDb in homes)
         {
             if (homeDb.Floor == floor)
             {
@@ -92,5 +92,22 @@ public class HomeService
 
         return homeByFloor;
     }
-    
+
+    public bool BuyHomeById(Guid id)
+    {
+        var homeDb = GetById(id);
+
+        if (homeDb is null)
+        {
+            return false;
+        }
+        if (homeDb.Quantity == 1)
+        {
+            homes.Remove(homeDb);
+        }
+
+        homeDb.Quantity--;
+        return true;
+    }
+
 }

@@ -8,5 +8,7 @@ public class Home
     public List<string> Rooms { get; set; } = new List<string>();
     public double Price { get; set; }
     public int Floor { get; set; }
+    public int Quantity { get; set; }
+
 
 }
