@@ -31,4 +31,18 @@ public class HomeService
 
         return null;
     }
+
+    public bool DeleteHome(Guid id)
+    {
+        var homeDb = GetById(id);
+        if (homeDb is null)
+        {
+            return false;
+        }
+
+        homes.Remove(homeDb);
+
+        return true;
+    }
+    
 }
