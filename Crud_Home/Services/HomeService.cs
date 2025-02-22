@@ -77,5 +77,10 @@ public class HomeService
 
          return homeByPrice;
     }
+
+    public List<Home> GetHomesByFloor(int floor)
+    {
+        var homeByFloor = new List<Home>();
+    }
     
 }
