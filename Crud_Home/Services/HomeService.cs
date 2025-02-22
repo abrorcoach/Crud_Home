@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Crud_Home.Models;
 
-namespace Crud_Home.Services
+namespace Crud_Home.Services;
+
+public class HomeService
 {
-    internal class HomeService
+    private List<Home> homes;
+
+    public HomeService()
     {
+        homes = new List<Home>();
+    }
+
+    public Home AddHome(Home home)
+    {
+        home.Id = Guid.NewGuid();
+        homes.Add(home);
+
+        return home;
     }
 }
